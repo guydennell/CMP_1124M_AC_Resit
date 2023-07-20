@@ -6,18 +6,35 @@ namespace CMP1124M_A_C_AO1
         {
             while (true)
             {
-                string Share_1_256_path = "C:\Users\44798\Documents\A+C RESIT\Share_1_256.txt"; //sets all the default file paths
-                string Share_2_256_path = "C:\Users\44798\Documents\A+C RESIT\Share_2_256.txt";
-                string Share_3_256_path = "C:\Users\44798\Documents\A+C RESIT\Share_3_256.txt";
-                string Share_1_2048_path = "C:\Users\44798\Documents\A+C RESIT\Share_1_2048.txt";
-                string Share_2_2048_path = "C:\Users\44798\Documents\A+C RESIT\Share_2_2048.txt";
-                string Share_3_2048_path = "C:\Users\44798\Documents\A+C RESIT\Share_3_2048.txt";
-                int[] Share_1_256 = FileToArray(Share_1_256_path); //converts all the files to seperate arrays
-                int[] Share_2_256 = FileToArray(Share_2_256_path);
-                int[] Share_3_256 = FileToArray(Share_3_256_path);
-                int[] Share_1_2048 = FileToArray(Share_1_2048_path);
-                int[] Share_2_2048 = FileToArray(Share_2_2048_path);
-                int[] Share_3_2048 = FileToArray(Share_3_2048_path);
+            private static readonly string directory = @"..\..\..\Roadfiles\";
+
+            // Initialising all 6 roads
+            public static readonly List<int> Share_1_256 = InitShare("Share_1_256.txt");
+            public static readonly List<int> Share_1_2048 = InitShare("Share_1_2048.txt");
+            public static readonly List<int> Share_2_256 = InitShare("Share_2_256.txt");
+            public static readonly List<int> Share_2_2048 = InitShare("Share_2_2048.txt");
+            public static readonly List<int> Share_3_256 = InitShare("Share_3_256.txt");
+            public static readonly List<int> Share_3_2048 = InitShare("Share_3_2048.txt");
+    
+            public static List<int> InitShare(string filepath)
+            {
+                /*
+                 * InitShare function
+                 * Reads text file of given filepath and converts
+                 * to an int array
+                 */
+                string[] lines = File.ReadAllLines(directory + filepath);
+                int[] road = lines.Select(int.Parse).ToArray();
+    
+                List<int> ShareList = new();
+                for (int i = 0; i < road.Length; i++)
+                {
+                    roadList.Add(Share[i]);
+                }
+                return ShareList;
+            } 
+        }
+    }
 
                 Console.WriteLine(); //gives the user the functionality to do everything the program should be able to do
                 Console.WriteLine("Pick a functionality: ");
