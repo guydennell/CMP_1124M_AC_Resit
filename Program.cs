@@ -1,4 +1,4 @@
-namespace CMP1124M_A_C_AO1
+namespace CMP1124M
 {
     public class Program
     {
