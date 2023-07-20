@@ -33,8 +33,7 @@ namespace CMP1124M_A_C_AO1
                 }
                 return ShareList;
             } 
-        }
-    }
+        
 
                 Console.WriteLine(); //gives the user the functionality to do everything the program should be able to do
                 Console.WriteLine("Pick a functionality: ");
