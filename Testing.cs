@@ -6,9 +6,9 @@ namespace CMP1124M_A_C_AO1
         {
             while (true)
             {
-            private static readonly string directory = @"..\..\..\Roadfiles\";
+            private static readonly string directory = @"..\..\..\shares\";
 
-            // Initialising all 6 roads
+            // Initialising all 6 shares
             public static readonly List<int> Share_1_256 = InitShare("Share_1_256.txt");
             public static readonly List<int> Share_1_2048 = InitShare("Share_1_2048.txt");
             public static readonly List<int> Share_2_256 = InitShare("Share_2_256.txt");
@@ -24,12 +24,12 @@ namespace CMP1124M_A_C_AO1
                  * to an int array
                  */
                 string[] lines = File.ReadAllLines(directory + filepath);
-                int[] road = lines.Select(int.Parse).ToArray();
+                int[] share = lines.Select(int.Parse).ToArray();
     
                 List<int> ShareList = new();
-                for (int i = 0; i < road.Length; i++)
+                for (int i = 0; i < share.Length; i++)
                 {
-                    roadList.Add(Share[i]);
+                    shareList.Add(Share[i]);
                 }
                 return ShareList;
             } 
